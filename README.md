@@ -95,12 +95,13 @@ All metrics are weighted AUC and AMS significance (mean ± σ over 200 bootstrap
 
 ### Smoke-test: 100k events · 50 epochs
 
-| Model | Params | AUC ± σ | AMS ± σ |
-|---|---|---|---|
-| XGBoost | — | 0.8812 ± 0.0007 | 2.4321 ± 0.0579 |
-| MLP | 14,529 | 0.8867 ± 0.0007 | 2.7830 ± 0.0522 |
+| Model | Params | AUC ± σ |
+|---|---|---|
+| XGBoost | — | 0.8812 ± 0.0007 |
+| MLP | 14,529 | 0.8867 ± 0.0007 |
+| KAN best config (G=5, k=4) | 34,689 | 0.8770 |
 
-Full results for all 5 models (KAN base, KAN + grid extension, KAN adversarial) including AMS significance and robustness metrics will be added after the lab GPU run on the complete 2M-event dataset.
+AMS significance and robustness metrics (Max AUC drop under energy scale shifts γ ∈ [0.8, 1.2]) for all 5 models will be reported after the full experiment on 2M events.
 
 ---
 
