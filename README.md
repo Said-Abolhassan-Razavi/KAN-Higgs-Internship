@@ -95,13 +95,15 @@ All metrics are weighted AUC and AMS significance (mean ± σ over 200 bootstrap
 
 ### Smoke-test: 100k events · 50 epochs
 
-| Model | Params | AUC ± σ | AMS ± σ |
-|---|---|---|---|
-| XGBoost | — | 0.8812 ± 0.0007 | 2.4321 ± 0.0579 |
-| MLP | 14,529 | 0.8867 ± 0.0007 | 2.7830 ± 0.0522 |
-| KAN best config (G=5, k=4) | 34,689 | 0.8770 | — |
+| Model | Params | AUC |
+|---|---|---|
+| XGBoost | — | 0.8812 ± 0.0007 |
+| MLP | 14,529 | 0.8867 ± 0.0007 |
+| KAN best config (G=5, k=4) | 34,689 | 0.8770 |
 
-Full results on 2M events (300 epochs, all 5 models, robustness table) will be added after the lab GPU run.
+> AMS significance and robustness metrics are reported in the full experiment table below (requires 2M events for statistical reliability).
+
+Full results on 2M events (300 epochs, all 5 models + robustness table) will be added after the lab GPU run.
 
 ---
 
