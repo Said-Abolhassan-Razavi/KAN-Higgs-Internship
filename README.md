@@ -85,7 +85,7 @@ MAX_EVENTS  = None   # full 2M dataset
 EPOCHS_MAIN = 300
 ```
 
-> **Current status**: Full pipeline validated on the complete blackSwan_data (2M events). Results below are from the 100k smoke-test run; full-dataset numbers will be updated after the lab GPU run.
+> **Current status — smoke-test only:** The results below were produced on a subset of the data (`MAX_EVENTS = 100,000` out of 2,000,000 events, `EPOCHS_MAIN = 50`). Full results on the complete 2M-event dataset with 300 epochs will be added after the lab GPU run. To reproduce the full experiment set `MAX_EVENTS = None` and `EPOCHS_MAIN = 300` in the config cell.
 
 ---
 
@@ -93,16 +93,24 @@ EPOCHS_MAIN = 300
 
 All metrics are weighted AUC and AMS significance (mean ± σ over 200 bootstrap resamples on the held-out test set).
 
-### 100k smoke-test (50 epochs, quick validation)
+### Smoke-test: 100k events · 50 epochs
 
 | Model | Params | AUC ± σ | AMS ± σ |
 |---|---|---|---|
 | XGBoost | — | 0.8812 ± 0.0007 | 2.4321 ± 0.0579 |
 | MLP | 14,529 | 0.8867 ± 0.0007 | 2.7830 ± 0.0522 |
 | KAN (G=5, k=3) | 34,689 | — | — |
-| KAN best (G=5, k=4, hyperparameter sweep) | — | 0.8770 | — |
+| KAN best config (G=5, k=4, hyperparameter sweep) | — | 0.8770 | — |
 
-> Full results (300 epochs, 2M events, all 5 models + robustness table) to be added after lab GPU run.
+### Full experiment: 2M events · 300 epochs *(pending lab GPU run)*
+
+| Model | Params | AUC ± σ | AMS ± σ | Max AUC drop |
+|---|---|---|---|---|
+| XGBoost | — | — | — | — |
+| MLP | 14,529 | — | — | — |
+| KAN (base) | 34,689 | — | — | — |
+| KAN + grid extension | — | — | — | — |
+| KAN adversarial | 34,689 | — | — | — |
 
 ---
 
