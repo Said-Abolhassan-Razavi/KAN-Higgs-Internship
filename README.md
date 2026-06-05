@@ -99,18 +99,19 @@ All metrics are weighted AUC and AMS significance (mean ± σ over 200 bootstrap
 |---|---|---|---|
 | XGBoost | — | 0.8812 ± 0.0007 | 2.4321 ± 0.0579 |
 | MLP | 14,529 | 0.8867 ± 0.0007 | 2.7830 ± 0.0522 |
-| KAN (G=5, k=3) | 34,689 | — | — |
-| KAN best config (G=5, k=4, hyperparameter sweep) | — | 0.8770 | — |
+| KAN — best config found (G=5, k=4) | 34,689 | 0.8770 | *(pending)* |
+
+> KAN AMS and robustness metrics require the full 2M-event run to be statistically meaningful — see table below.
 
 ### Full experiment: 2M events · 300 epochs *(pending lab GPU run)*
 
-| Model | Params | AUC ± σ | AMS ± σ | Max AUC drop |
+| Model | Params | AUC ± σ | AMS ± σ | Max AUC drop (robustness) |
 |---|---|---|---|---|
-| XGBoost | — | — | — | — |
-| MLP | 14,529 | — | — | — |
-| KAN (base) | 34,689 | — | — | — |
-| KAN + grid extension | — | — | — | — |
-| KAN adversarial | 34,689 | — | — | — |
+| XGBoost | — | *(pending)* | *(pending)* | *(pending)* |
+| MLP | 14,529 | *(pending)* | *(pending)* | *(pending)* |
+| KAN (base, G=5, k=3) | 34,689 | *(pending)* | *(pending)* | *(pending)* |
+| KAN + grid extension (G=3→10) | — | *(pending)* | *(pending)* | *(pending)* |
+| KAN adversarial (λ=5) | 34,689 | *(pending)* | *(pending)* | *(pending)* |
 
 ---
 
