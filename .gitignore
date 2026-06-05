@@ -1,0 +1,28 @@
+# Dataset — too large for GitHub (14 GB)
+# Run download_data.py to get it
+data/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated plots
+*.pdf
+
+# blackSwan dataset (too large for GitHub)
+blackSwan_data/
+
+# ZIP files
+*.zip
+
+# SSH config
+.sixth/
+
+# Victor Borck reference notebook (referenced by URL in README and CONTRIBUTIONS.md)
+Notebook-Fair-Universe-KAN-Victor-Borck-main/
+
+# Exploratory/debug scripts not suitable for public release
+download_blackSwan.py
