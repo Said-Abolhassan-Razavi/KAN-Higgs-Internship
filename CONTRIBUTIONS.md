@@ -167,7 +167,6 @@ this is too coarse. No adaptive binning is used.
 |---|---|
 | **Missing value imputation** | Replaces the sentinel value (−25.0 for blackSwan_data) with per-feature mean of valid values before any model sees the data. Fixes a silent bug present in Victor's notebook (which fed −999 raw into the B-spline). |
 | **Weight handling** | blackSwan_data weights are already physics-normalised (∑w ≈ 105,718, matching 10 fb⁻¹). No K-scaling is needed here, unlike the original FAIR Universe parquet where Victor applies K=275.14. Class-balance re-weighting (155×) is applied only to the training set to equalise signal/background loss contributions. |
-| **MLP baseline** | Adds a properly tuned dense network baseline, enabling a fair comparison: XGBoost vs MLP vs KAN. |
 | **Bootstrap confidence intervals** | All AUC and AMS values reported as mean ± σ over 200 bootstrap resamples. Differences between models are statistically interpretable. |
 | **Three-way data split** | Train / validation / test prevents data leakage from hyperparameter tuning. |
 | **Systematic uncertainty robustness** | Evaluates all models under energy scale shifts γ ∈ [0.80, 1.20], directly measuring what the FAIR Universe challenge tests. |
@@ -189,7 +188,7 @@ this is too coarse. No adaptive binning is used.
 
 | Question | Addressed by Victor | Addressed Here |
 |---|---|---|
-| Can KAN match XGBoost? | Partially (no fair baseline) | Yes — with MLP baseline + equal tuning |
+| Can KAN match XGBoost? | Partially (no fair baseline) | Yes — with equal tuning and bootstrap CI |
 | Does adaptive grid help? | No | Yes — grid update + extension experiment |
 | Is KAN robust to systematics? | Proxy only | Yes — proper shift analysis + adversarial |
 | Can KAN reveal physics? | No | Yes — spline visualisation + feature importance |
